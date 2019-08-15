@@ -5,11 +5,11 @@
     <thead>
         <tr>
             <td>#</td>
-            <td>NOmbre</td>
-            <td>sexo</td>
-            <td>edad</td>
-            <td>fecha de rescate</td>
-            <td>adoptante</td>
+            <td>Empleado</td>
+            <td>Tipo de ausencia</td>
+            <td>No. de ausencias</td>
+            <td>Fecha desde</td>
+            <td>Fecha Hasta</td>
         </tr>
     </thead>
     <tbody>
@@ -17,11 +17,11 @@
         {% for solicitud in object_list %}
         <tr>
             <td>{{ solicitud.id }}</td>
-            <td>{{ solicitud.nombre }}</td>
-            <td>{{ solicitud.sexo }}</td>
-            <td>{{ solicitud.edad_aproximada }}</td>
-            <td>{{ solicitud.fecha_rescate }}</td>
-            <td>{{ solicitud.persona.nombre }} {{ solicitud.persona.apellido }}</td>
+            <td>{{ solicitud.personat.nombre }} {{ solicitud.personat.apellido }}</td>
+            <td>{{ solicitud.tausenciat.nombre }}</td>
+            <td>{{ solicitud.num_ausencia }}</td>
+            <td>{{ solicitud.fecha_desde }}</td>
+            <td>{{ solicitud.fecha_hasta }}</td>
             <td>
                 <a class="btn btn-primary" href="/solicitud/editar/{{ solicitud.id }}/">Editar</a>
                 <a class="btn btn-danger" href="/solicitud/eliminar/{{ solicitud.id }}/">Eliminar</a>

@@ -10,26 +10,24 @@ class SolicitudForm(forms.ModelForm):
         fields = "__all__" 
 
         # fiels = [
-        #     'nombre',
-        #     'sexo',
-        #     'edad_aproximada',
-        #     'fecha_rescate',
-        #     'persona',
-        #     'vacuna',
+        #     'id',
+        #     'num_ausencia',
+        #     'fecha_desde',
+        #     'fecha_hasta',
+        #     'personat',
+        #     'tausenciat',
         # ]
-        # label = {
-        #     'nombre': 'Nombre',
-        #     'sexo': 'Genero',
-        #     'edad_aproximada': 'Edad aproximada',
-        #     'fecha_rescate': 'Fecha de rescate',
-        #     'persona': 'Adoptante',
-        #     'vacuna': 'Vacunas',
-        # }
-        # widgets={
-        #     'nombre': forms.TextInput(attrs={'class':'form-control'}),
-        #     'sexo': forms.TextInput(attrs={'class':'form-control'}),
-        #     'edad_aproximada': forms.TextInput(attrs={'class':'form-control'}),
-        #     'fecha_rescate': forms.TextInput(attrs={'class':'form-control'}),
-        #     'persona': forms.Select(attrs={'class':'form-control'}),
-        #     'vacuna': forms.CheckboxSelectMultiple(),
-        # }
+        label = {
+            'num_ausencia':'No. de ausencias:',
+            'fecha_desde':'Fecha desde:',
+            'fecha_hasta':'Fecha hasta:',
+            'personat':'Empleado:',
+            'tausenciat':'Tipo de ausencia:',
+        }
+        widgets={
+            'num_ausencia': forms.TextInput(attrs={'class':'form-control'}),
+            'fecha_desde': forms.TextInput(attrs={'class':'form-control'}),
+            'fecha_hasta': forms.TextInput(attrs={'class':'form-control'}),
+            'personat': forms.Select(attrs={'class':'form-control'}),
+            'tausenciat': forms.Select(attrs={'class':'form-control'}),
+        }
