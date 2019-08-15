@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>NOmbre</td>
+            <td>sexo</td>
+            <td>edad</td>
+            <td>fecha de rescate</td>
+            <td>adoptante</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if object_list %} <!-- solicituds -->
+        {% for solicitud in object_list %}
+        <tr>
+            <td>{{ solicitud.id }}</td>
+            <td>{{ solicitud.nombre }}</td>
+            <td>{{ solicitud.sexo }}</td>
+            <td>{{ solicitud.edad_aproximada }}</td>
+            <td>{{ solicitud.fecha_rescate }}</td>
+            <td>{{ solicitud.persona.nombre }} {{ solicitud.persona.apellido }}</td>
+            <td>
+                <a class="btn btn-primary" href="/solicitud/editar/{{ solicitud.id }}/">Editar</a>
+                <a class="btn btn-danger" href="/solicitud/eliminar/{{ solicitud.id }}/">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No existen registros...</h1>
+        {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}
